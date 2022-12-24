@@ -35,12 +35,6 @@ INSTALLED_APPS = [
     "jazzmin",
     "rest_framework",
     'drf_yasg',  # swagger ui
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.github',
-
     # django apps
     'django.contrib.admin',
     'django.contrib.auth',
