@@ -6,8 +6,11 @@ from home.models import SubDomain, Domain
 
 @admin.register(SubDomain)
 class SubDomainAdmin(admin.ModelAdmin):
-    list_display = ['domain', 'proxy_pass']
+    list_display = ['domain', 'proxy_pass', 'domain_name']
     search_fields = ['domain', 'proxy_pass']
+
+    def domain_name(self, obj):
+        return obj.domain_name
 
 
 @admin.register(Domain)
