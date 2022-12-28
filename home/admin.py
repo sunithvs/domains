@@ -10,7 +10,8 @@ class SubDomainAdmin(admin.ModelAdmin):
     search_fields = ['domain', 'proxy_pass']
 
     def domain_name(self, obj):
-        return obj.domain_name
+        """ return domain name  as a link to the domain """
+        return '<a href="http://{}" target="_blank">{}</a>'.format(obj.domain_name, obj.domain_name)
 
 
 @admin.register(Domain)
