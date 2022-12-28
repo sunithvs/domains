@@ -1,5 +1,6 @@
 # register domain
 from django.contrib import admin
+from django.utils.safestring import mark_safe
 
 from home.models import SubDomain, Domain
 
@@ -11,7 +12,7 @@ class SubDomainAdmin(admin.ModelAdmin):
 
     def domain_name(self, obj):
         """ return domain name  as a link to the domain """
-        return '<a href="http://{}" target="_blank">{}</a>'.format(obj.domain_name, obj.domain_name)
+        return mark_safe('<a href="http://{}" target="_blank">{}</a>'.format(obj.domain_name, obj.domain_name))
 
 
 @admin.register(Domain)
