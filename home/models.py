@@ -19,7 +19,7 @@ class SubDomain(models.Model):
 
     @property
     def domain_name(self):
-        return self.domain.name + '.' + self.name
+        return self.name + '.' + self.domain.name
 
     class Meta:
         unique_together = ('domain', 'name')
