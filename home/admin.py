@@ -7,10 +7,10 @@ from home.models import SubDomain, Domain
 
 @admin.register(SubDomain)
 class SubDomainAdmin(admin.ModelAdmin):
-    list_display = ['domain', 'proxy_pass', 'domain_name']
+    list_display = ['domain', 'proxy_pass', 'link']
     search_fields = ['domain', 'proxy_pass']
 
-    def domain_name(self, obj):
+    def link(self, obj):
         """ return domain name  as a link to the domain """
         return mark_safe('<a href="http://{}" target="_blank">{}</a>'.format(obj.domain_name, obj.domain_name))
 
