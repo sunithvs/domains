@@ -62,6 +62,7 @@ class SubDomain(models.Model):
 
     def delete(self, *args, **kwargs):
         super(SubDomain, self).delete(*args, **kwargs)
+        print('deleting domain ' + self.domain_name)
         os.remove('/etc/nginx/sites-enabled/' + self.domain_name)
         os.system('service nginx reload')
 
